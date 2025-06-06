@@ -1,5 +1,7 @@
 export default function handler(req, res) {
-  const egAccId = req.query.eg_acc_id || 'default';
+  const egAccId = req.query.eg_acc_id || 'missing';
+
+  const embedUrl = `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${encodeURIComponent(egAccId)}`;
 
   res.status(200).json({
     results: [
@@ -12,7 +14,7 @@ export default function handler(req, res) {
             type: "IFRAME",
             width: 890,
             height: 748,
-            uri: `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${egAccId}`,
+            uri: embedUrl,
             label: "Open Evergrowth",
             associatedObjectProperties: ["eg_acc_id"]
           }
