@@ -9,25 +9,24 @@ export default function handler(req, res) {
     results: [
       {
         objectId: 1,
-        title: "", // ← REMOVE VISIBLE TITLE
+        title: "", // no title
         link: null,
-        actions: [
-          {
-            type: "IFRAME",
-            width: 890,
-            height: 748,
-            uri: embedUri,
-            label: "Open Evergrowth", // dark primary button
-            associatedObjectProperties: []
-          },
-          {
-            type: "ACTION_HOOK",
-            httpMethod: "GET",
-            uri: directLink,
-            label: "Open in new tab", // lighter button
-            associatedObjectProperties: []
-          }
-        ]
+        properties: []
+      }
+    ],
+    primaryAction: {
+      type: "IFRAME",
+      width: 890,
+      height: 748,
+      uri: embedUri,
+      label: "Open Evergrowth"
+    },
+    secondaryActions: [
+      {
+        type: "ACTION_HOOK",
+        httpMethod: "GET",
+        uri: directLink,
+        label: "Open in new tab"
       }
     ]
   });
