@@ -1,5 +1,7 @@
 export default function handler(req, res) {
-  const egAccId = req.query.eg_acc_id || '';
+  const egAccId = (req.query.eg_acc_id || '').trim();
+
+  const isValid = /^A[0-9a-zA-Z]{20,}$/.test(egAccId); // basic validation
   const targetUrl = `https://app.evergrowth.com/accounts/${egAccId}`;
 
   const html = `
@@ -58,7 +60,7 @@ export default function handler(req, res) {
       </style>
     </head>
     <body>
-      ${egAccId ? `
+      ${isValid ? `
         <div class="content-wrapper">
           <div id="iframeContainer" style="display:none;">
             <div class="iframe-crop-container">
