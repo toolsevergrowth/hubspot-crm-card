@@ -1,9 +1,8 @@
 export default function handler(req, res) {
-  console.log("HubSpot request query:", req.query);
+  const egAccIdRaw = req.query.eg_acc_id;
+  const egAccId = Array.isArray(egAccIdRaw) ? egAccIdRaw[0] : (egAccIdRaw || '').trim();
 
-  const egAccId = req.query.eg_acc_id || 'missing';
-
-  const embedUrl = `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${encodeURIComponent(egAccId)}`;
+  const embedUri = `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${encodeURIComponent(egAccId)}`;
 
   res.status(200).json({
     results: [
@@ -16,9 +15,8 @@ export default function handler(req, res) {
             type: "IFRAME",
             width: 890,
             height: 748,
-            uri: embedUrl,
-            label: "Open Evergrowth",
-            associatedObjectProperties: ["eg_acc_id"]
+            uri: embedUri,
+            label: "Open Evergrowth"
           }
         ]
       }
