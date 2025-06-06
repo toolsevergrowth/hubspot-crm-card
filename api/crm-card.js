@@ -8,18 +8,18 @@ export default function handler(req, res) {
     results: [
       {
         objectId: 1,
-        title: "View in Evergrowth",
+        title: "Evergrowth Account View",
         link: null,
-        actions: [
-          {
-            type: "IFRAME",
-            width: 890,
-            height: 748,
-            uri: embedUri,
-            label: "Open Evergrowth"
-          }
-        ]
+        actions: [],
+        properties: []
       }
-    ]
+    ],
+    primaryAction: {
+      type: "IFRAME",
+      width: 890,
+      height: 748,
+      uri: embedUri,
+      label: "Open Evergrowth"
+    }
   });
 }
