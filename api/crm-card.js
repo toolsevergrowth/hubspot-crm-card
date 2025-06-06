@@ -9,22 +9,13 @@ export default function handler(req, res) {
     results: [
       {
         objectId: 1,
-        title: "", // leave blank; no awkward dots
+        title: "Evergrowth",
         link: null,
         properties: [
           {
-            label: "",
-            dataType: "STRING",
-            value: `
-              <div style="text-align:center; margin-bottom: 20px;">
-                <img src="https://hubspot-crm-card-three.vercel.app/logo.png" alt="Evergrowth Logo" style="height: 40px; margin-bottom: 12px;" />
-              </div>
-              <div style="text-align:center;">
-                <a href="${directLink}" target="_blank" style="display:inline-block; margin-top: 10px; background:#F0F4F7; color:#0064FF; padding:8px 16px; border-radius:6px; font-weight:600; text-decoration:none;">
-                  Open in new tab →
-                </a>
-              </div>
-            `
+            label: "Open in new tab",
+            dataType: "LINK",
+            value: directLink
           }
         ]
       }
