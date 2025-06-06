@@ -1,6 +1,6 @@
 export default function handler(req, res) {
   const egAccId = req.query.eg_acc_id || '';
-  const targetUrl = `https://app.evergrowth.com/4576d989-194b-4a04-8153-074f2805c62a/accounts/${egAccId}`;
+  const targetUrl = `https://app.evergrowth.com/accounts/${egAccId}`;
 
   const html = `
     <!DOCTYPE html>
