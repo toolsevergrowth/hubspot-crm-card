@@ -9,9 +9,16 @@ export default function handler(req, res) {
     results: [
       {
         objectId: 1,
-        title: "", // no title
+        title: ".", // forces title area to collapse visually
         link: null,
-        properties: []
+        properties: [
+          {
+            label: "",
+            dataType: "LINK",
+            value: directLink,
+            linkLabel: "Open in new tab"
+          }
+        ]
       }
     ],
     primaryAction: {
@@ -20,14 +27,6 @@ export default function handler(req, res) {
       height: 748,
       uri: embedUri,
       label: "Open Evergrowth"
-    },
-    secondaryActions: [
-      {
-        type: "ACTION_HOOK",
-        httpMethod: "GET",
-        uri: directLink,
-        label: "Open in new tab"
-      }
-    ]
+    }
   });
 }
