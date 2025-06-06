@@ -12,7 +12,7 @@ export default function handler(req, res) {
             type: "IFRAME",
             width: 890,
             height: 748,
-            uri: `https://app.evergrowth.com/CO2a9a317709a5f7d5e85830b0b9ce/accounts/${egAccId}`,
+            uri: `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${egAccId}`,
             label: "Open Evergrowth",
             associatedObjectProperties: ["eg_acc_id"]
           }
