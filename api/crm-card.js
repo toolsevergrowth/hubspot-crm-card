@@ -1,4 +1,6 @@
 export default function handler(req, res) {
+  console.log("HubSpot request query:", req.query);
+
   const egAccId = req.query.eg_acc_id || 'missing';
 
   const embedUrl = `https://hubspot-crm-card-three.vercel.app/api/embed?eg_acc_id=${encodeURIComponent(egAccId)}`;
